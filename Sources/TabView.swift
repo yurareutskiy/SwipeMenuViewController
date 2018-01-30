@@ -5,6 +5,8 @@ public protocol TabViewDataSource {
     func numberOfItems(in tabView: TabView) -> Int
 
     func tabView(_ tabView: TabView, titleForItemAt index: Int) -> String?
+
+    func tabView(_ tabView: TabView, tabForPageAt index: Int) -> UIView?
 }
 
 open class TabView: UIScrollView {

@@ -60,6 +60,7 @@ final class ViewController: SwipeMenuViewController {
 
     override func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
         let vc = ContentViewController()
+        vc.addChildViewController(vc)
         vc.content = datas[index]
         return vc
     }
