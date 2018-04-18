@@ -186,6 +186,8 @@ open class TabView: UIScrollView {
                 tabItemView.titleLabel.font = options.itemView.font
                 tabItemView.textColor = options.itemView.textColor
                 tabItemView.selectedTextColor = options.itemView.selectedTextColor
+                tabItemView.textFont = options.itemView.font
+                tabItemView.selectedTextFont = options.itemView.selectedFont
             }
 
             tabItemView.isSelected = index == currentIndex
@@ -287,7 +289,7 @@ open class TabView: UIScrollView {
         }
     }
 
-    private func updateSelectedItem(by newIndex: Int) {
+    fileprivate func updateSelectedItem(by newIndex: Int) {
         for (i, itemView) in itemViews.enumerated() {
             itemView.isSelected = i == newIndex
         }

@@ -24,7 +24,7 @@ public struct SwipeMenuViewOptions {
             public var margin: CGFloat = 5.0
 
             /// ItemView font. Defaults to `14 pt as bold SystemFont`.
-            public var font: UIFont = UIFont.boldSystemFont(ofSize: 14)
+            public var font: UIFont = UIFont.systemFont(ofSize: 16)
 
             /// ItemView clipsToBounds. Defaults to `true`.
             public var clipsToBounds: Bool = true
@@ -34,6 +34,9 @@ public struct SwipeMenuViewOptions {
 
             /// ItemView selected textColor. Defaults to `.black`.
             public var selectedTextColor: UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            
+            /// ItemView selected font. Defaults to `14 pt as bold SystemFont`.
+            public var selectedFont: UIFont = UIFont.boldSystemFont(ofSize: 16)
         }
 
         public struct UndelineView {
@@ -196,8 +199,8 @@ open class SwipeMenuView: UIView {
     fileprivate var isPortrait: Bool = true
 
     /// The index of the front page in `SwipeMenuView` (read only).
-    open private(set) var currentIndex: Int = 0
-    private var jumpingToIndex: Int?
+    open fileprivate(set) var currentIndex: Int = 0
+    fileprivate var jumpingToIndex: Int?
 
     public init(frame: CGRect, options: SwipeMenuViewOptions? = nil) {
 
